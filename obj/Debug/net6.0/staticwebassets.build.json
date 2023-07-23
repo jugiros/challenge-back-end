@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "2lBSLNjaCBDFSFwqY7LJIOiMyxmqsWnd6MAay5EIp14=",
+  "Source": "challenge-back-end",
+  "BasePath": "_content/challenge-back-end",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
