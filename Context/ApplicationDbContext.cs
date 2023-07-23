@@ -12,5 +12,6 @@ namespace challenge_back_end.Context
         }
 
         public DbSet<Person> Person => Set<Person>();
+        public DbSet<Store> Store => Set<Store>();
     }
 }
