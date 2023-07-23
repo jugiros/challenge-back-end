@@ -5,6 +5,12 @@ namespace challenge_back_end.Context
 {
     public class ApplicationDbContext: DbContext
     {
-        public DbSet<Person> Person { get; set; }
+        public ApplicationDbContext(DbContextOptions options)
+            : base(options)
+        {
+
+        }
+
+        public DbSet<Person> Person => Set<Person>();
     }
 }
