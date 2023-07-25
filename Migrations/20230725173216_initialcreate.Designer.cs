@@ -12,7 +12,7 @@ using challenge_back_end.Context;
 namespace challenge_back_end.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230725165939_initialcreate")]
+    [Migration("20230725173216_initialcreate")]
     partial class initialcreate
     {
         /// <inheritdoc />
@@ -42,6 +42,11 @@ namespace challenge_back_end.Migrations
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("LastName")
                         .HasMaxLength(20)
@@ -74,6 +79,11 @@ namespace challenge_back_end.Migrations
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");

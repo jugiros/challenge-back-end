@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using challenge_back_end.Context;
 using challenge_back_end.Models;
+using challenge_back_end.Helper;
 
 namespace challenge_back_end.Controllers
 {
@@ -86,10 +87,14 @@ namespace challenge_back_end.Controllers
         [HttpPost]
         public async Task<ActionResult<Person>> PostPerson(Person person)
         {
-          if (_context.Person == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Person'  is null.");
-          }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ErrorHelper.GetModelStateErrors(ModelState));
+            }
+            if (_context.Person == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Person'  is null.");
+            }
             _context.Person.Add(person);
             await _context.SaveChangesAsync();
 

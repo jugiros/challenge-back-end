@@ -40,6 +40,11 @@ namespace challenge_back_end.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
                     b.Property<string>("LastName")
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
@@ -71,6 +76,11 @@ namespace challenge_back_end.Migrations
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");

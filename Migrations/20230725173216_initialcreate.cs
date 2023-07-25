@@ -19,6 +19,7 @@ namespace challenge_back_end.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     Address = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Age = table.Column<int>(type: "int", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -36,6 +37,7 @@ namespace challenge_back_end.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BusinessName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     TradeName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     Address = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     ValidityTime = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false)
