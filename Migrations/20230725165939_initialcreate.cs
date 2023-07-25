@@ -20,7 +20,7 @@ namespace challenge_back_end.Migrations
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Address = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    Age = table.Column<int>(type: "int", maxLength: 2, nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -37,7 +37,7 @@ namespace challenge_back_end.Migrations
                     BusinessName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     TradeName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     Address = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    Age = table.Column<int>(type: "int", maxLength: 2, nullable: false),
+                    ValidityTime = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

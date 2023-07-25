@@ -1,17 +1,20 @@
 Microsoft.EntityFrameworkCore -> ORM
 Microsoft.EntityFrameworkCore.Tools -> Herramientas
-Microsoft.EntityFrameworkCore.SQLServer -> Conexión
-Microsoft.EntityFrameworkCore.Design -> Conexión
-Microsoft.Extensions.Configuration -> Conexión
+Microsoft.EntityFrameworkCore.SQLServer -> Conexiï¿½n
+Microsoft.EntityFrameworkCore.Design -> Conexiï¿½n
+Microsoft.Extensions.Configuration -> Conexiï¿½n
 
-.Net versión 6
+Visual Studio Community 2022
+Current version -> VersiÃ³n 17.3.3
+
+.Net versiï¿½n 6
 
 Verificar todas las dependencias agregadas.
 
 Nombre de la base de datos: challenge-back-end
 SQLEXPRESS -> SQLSERVER
 
-Verificar el nombre del server para la conexión con la base de datos.
+Verificar el nombre del server para la conexiï¿½n con la base de datos.
 select @@SERVERNAME
 
 add-migration initialcreate

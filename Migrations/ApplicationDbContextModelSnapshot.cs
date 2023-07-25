@@ -35,7 +35,6 @@ namespace challenge_back_end.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("Age")
-                        .HasMaxLength(2)
                         .HasColumnType("int");
 
                     b.Property<DateTime>("BirthDate")
@@ -68,10 +67,6 @@ namespace challenge_back_end.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int>("Age")
-                        .HasMaxLength(2)
-                        .HasColumnType("int");
-
                     b.Property<string>("BusinessName")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -83,6 +78,9 @@ namespace challenge_back_end.Migrations
                     b.Property<string>("TradeName")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("ValidityTime")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

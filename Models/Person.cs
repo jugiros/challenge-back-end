@@ -16,7 +16,6 @@ namespace challenge_back_end.Models
         [MaxLength(100)]
         public string? Address { get; set; }
         [Required]
-        [MaxLength(2)]
         public int Age { get; set; }
         [Required]
         public DateTime BirthDate { get; set; }
