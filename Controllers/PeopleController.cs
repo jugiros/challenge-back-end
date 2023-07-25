@@ -26,10 +26,11 @@ namespace challenge_back_end.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Person>>> GetPerson()
         {
-          if (_context.Person == null)
-          {
-              return NotFound();
-          }
+
+            if (_context.Person == null)
+            {
+                return NotFound();
+            }
             return await _context.Person.ToListAsync();
         }
 
@@ -37,10 +38,10 @@ namespace challenge_back_end.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Person>> GetPerson(int id)
         {
-          if (_context.Person == null)
-          {
-              return NotFound();
-          }
+            if (_context.Person == null)
+            {
+                return NotFound();
+            }
             var person = await _context.Person.FindAsync(id);
 
             if (person == null)

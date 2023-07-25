@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using challenge_back_end.Context;
 using challenge_back_end.Models;
+using challenge_back_end.Helper;
 
 namespace challenge_back_end.Controllers
 {
@@ -25,10 +26,10 @@ namespace challenge_back_end.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Store>>> GetStore()
         {
-          if (_context.Store == null)
-          {
-              return NotFound();
-          }
+            if (_context.Store == null)
+            {
+                return NotFound();
+            }
             return await _context.Store.ToListAsync();
         }
 
@@ -36,10 +37,10 @@ namespace challenge_back_end.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Store>> GetStore(int id)
         {
-          if (_context.Store == null)
-          {
-              return NotFound();
-          }
+            if (_context.Store == null)
+            {
+                return NotFound();
+            }
             var store = await _context.Store.FindAsync(id);
 
             if (store == null)
@@ -86,10 +87,14 @@ namespace challenge_back_end.Controllers
         [HttpPost]
         public async Task<ActionResult<Store>> PostStore(Store store)
         {
-          if (_context.Store == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Store'  is null.");
-          }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ErrorHelper.GetModelStateErrors(ModelState));
+            }
+            if (_context.Store == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Store'  is null.");
+            }
             _context.Store.Add(store);
             await _context.SaveChangesAsync();
 
